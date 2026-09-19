@@ -24,52 +24,52 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     `,
     hard: `
-      /* 1. Globaler Farbentzug: Garantiert TIEFSCHWARZER Hintergrund für ALLES */
-      html, body, div, form, header, nav, main {
-        background: #121212 !important;
-        color: #ffffff !important;
+      /* 1. Radikaler, absolut lückenloser Tiefschwarz-Modus für ALLE Container */
+      *, html, body, div, form, header, nav, main, article, section, blockquote {
+        background-color: #121212 !important;
+        background-image: none !important;
         box-shadow: none !important;
         text-shadow: none !important;
-        background-image: none !important;
+        border-color: #333333 !important;
       }
       
-      /* 2. Text-Elemente rigoros weiß und lesbar machen */
-      p, h1, h2, h3, h4, h5, h6, span, a, li, b, strong, em, input, textarea {
+      /* 2. Knallharter Text-Kontrast: Alles wird reinweiß */
+      p, h1, h2, h3, h4, h5, h6, span, a, li, b, strong, em, input, textarea, dt, dd {
         color: #ffffff !important;
         font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
-        background: transparent !important;
+        background-color: transparent !important;
       }
       
-      /* Links sauber unterstreichen und leicht bläulich färben */
+      /* Links sauber kennzeichnen */
       a {
         text-decoration: underline !important;
         color: #8ab4f8 !important;
       }
       
-      /* 3. Strukturierte Trennlinien und dunkelgraue Boxen für Feeds & Suchergebnisse */
-      article, section, [role="main"], .g, .card, .post {
-        background: #1e1e1e !important;
+      /* 3. Schicke, einheitliche Rahmen um die Google-Suchergebnisse & Hauptblöcke */
+      .g, .card, .post, [role="main"] {
         border: 1px solid #333333 !important;
         border-radius: 12px !important;
         padding: 16px !important;
         margin-bottom: 16px !important;
+        background-color: #121212 !important;
       }
       
-      /* Knöpfe und Eingabefelder sauber umranden */
-      button, input, select {
+      /* Knöpfe und Eingabefelder anpassen */
+      button, input, select, [role="button"] {
         border: 1px solid #555555 !important;
         border-radius: 8px !important;
-        background: #252525 !important;
+        background-color: #252525 !important;
         color: #ffffff !important;
         padding: 6px 12px !important;
       }
       
-      /* 4. Medien und störende Layout-Kreise komplett verstecken */
-      img, video, iframe, svg, canvas, audio {
+      /* 4. Medien, störende Icons und Trenn-Kreise komplett eliminieren */
+      img, video, iframe, svg, canvas, audio, g, path {
         display: none !important;
       }
       
-      /* 5. Zentriertes, sauberes Lese-Layout */
+      /* 5. Perfekt zentriertes eBook-Lese-Layout */
       body {
         max-width: 680px !important;
         margin: 0 auto !important;
