@@ -1,63 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
   const modes = {
     mild: `
-      /* 1. Schöne, moderne und hochgradig lesbare Schriftart erzwingen */
+      /* 1. Moderne Schriftart erzwingen */
       * {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
       }
       
-      /* 2. Abgerundete Ecken für alle Container, Buttons, Inputs und Bilder */
+      /* 2. Abgerundete Ecken für alle sichtbaren Elemente */
       div, section, article, main, button, input, select, textarea, img, canvas {
-        border-radius: 12px !important;
+        border-radius: 14px !important;
       }
       
-      /* 3. Entferne störende Hintergrundbilder und Schatten für mehr Ruhe */
+      /* 3. Hintergrundbilder und Schatten für visuelle Ruhe entfernen */
       body, div, article, section, p {
         background-image: none !important;
         box-shadow: none !important;
         text-shadow: none !important;
       }
       
-      /* 4. Blende typische Werbe- und Ablenkungs-Container aus */
+      /* 4. Sidebars und typische Ablenkungen ausblenden */
       aside, footer, .sidebar, .ads, #sidebar, [role="complementary"] {
         display: none !important;
       }
     `,
     hard: `
-      /* Brutaler Minimalismus, aber mit modernem Touch */
-      * {
+      /* 1. Globaler Farbentzug ohne Box-Explosion */
+      html, body {
         background: #ffffff !important;
         color: #000000 !important;
-        border-color: #000000 !important;
-        background-image: none !important;
-        /* Schicke serifenlose Schrift statt der alten Schreibmaschinen-Schrift */
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-        animation: none !important;
-        transition: none !important;
       }
       
-      /* Abgerundete Ecken für die Textblöcke und Rahmen im Hardcore-Modus */
-      div, section, article, button, input {
-        border-radius: 8px !important;
+      /* Nur Text- und Struktur-Elemente filtern, nicht JEDES Element */
+      p, h1, h2, h3, h4, h5, h6, span, a, li, button, input {
+        color: #000000 !important;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+        background: transparent !important;
+      }
+      
+      /* 2. Strukturierte Hauptboxen sauber abrunden, ohne Verschachtelungs-Schleife */
+      article, section, main, .post, .card, li {
+        background: #ffffff !important;
         border: 1px solid #000000 !important;
-        padding: 10px !important;
-        margin-bottom: 10px !important;
+        border-radius: 10px !important;
+        padding: 16px !important;
+        margin-bottom: 16px !important;
       }
       
-      /* Verstecke alle Bilder, Videos und ablenkenden Medien */
-      img, video, iframe, svg, canvas {
+      /* 3. Medien komplett verstecken */
+      img, video, iframe, svg, canvas, audio {
         display: none !important;
       }
       
-      /* Halte den Haupttext perfekt zentriert und lesbar wie in einem cleanen eBook */
+      /* 4. Zentriertes, sauberes eBook-Layout */
       body {
         max-width: 650px !important;
         margin: 0 auto !important;
         padding: 40px 20px !important;
         line-height: 1.7 !important;
-        background: #ffffff !important;
       }
     `
   };
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab) return;
 
-    // Alten injizierten Style entfernen
     await chrome.scripting.executeScript({
       target: { tabId: tab.id },
       func: () => {
@@ -75,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Neuen Style injizieren, wenn es kein Reset ist
     if (modeName !== 'reset') {
       const cssToInject = modes[modeName];
       chrome.scripting.executeScript({
