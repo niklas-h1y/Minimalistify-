@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hard: `
       /* 1. Mathematischer 2-Farben-Filter für die gesamte Webseite */
       html {
-        filter: grayscale(100%) contrast(1000%) !important;
+        filter: grayscale(100%) contrast(100000%) !important;
         background-color: #000000 !important;
       }
       
