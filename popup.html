@@ -4,35 +4,41 @@
   <meta charset="UTF-8">
   <style>
     body {
-      width: 200px;
-      font-family: sans-serif;
-      padding: 10px;
+      width: 220px;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      padding: 14px;
       margin: 0;
       background: #121212;
       color: #ffffff;
       text-align: center;
     }
-    h3 { margin: 0 0 10px 0; font-size: 14px; letter-spacing: 1px; }
+    h3 { 
+      margin: 0 0 12px 0; 
+      font-size: 15px; 
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
     button {
       width: 100%;
-      padding: 8px;
-      margin: 4px 0;
-      border: 1px solid #333;
-      background: #222;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      background: #252525;
       color: #fff;
-      border-radius: 4px;
+      border-radius: 10px;
       cursor: pointer;
-      font-size: 12px;
-      transition: 0.2s;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.2s;
     }
-    button:hover { background: #333; border-color: #555; }
-    .reset { background: #8b0000; }
-    .reset:hover { background: #b22222; }
+    button:hover { background: #353535; }
+    .reset { background: #b22222; }
+    .reset:hover { background: #dc143c; }
   </style>
 </head>
 <body>
   <h3>𝐌𝐢𝐧𝐢𝐦𝐚𝐥𝐢𝐬𝐭𝐢𝐟𝐲</h3>
-  <button id="btn-mild">Mild (Clean Text)</button>
+  <button id="btn-mild">Mild (Clean & Round)</button>
   <button id="btn-hard">Hardcore (B&W Mono)</button>
   <button id="btn-reset" class="reset">Reset Style</button>
 
