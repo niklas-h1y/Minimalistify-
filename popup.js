@@ -24,50 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     `,
     hard: `
-      /* 1. Mathematischer 2-Farben-Filter für die gesamte Webseite */
+      /* 1. Reine mathematische Filter-Magie für das gesamte Dokument */
       html {
-        filter: grayscale(100%) contrast(100000%) !important;
+        filter: grayscale(100%) contrast(50000%) !important;
         background-color: #000000 !important;
       }
       
-      /* 2. Sicherstellen, dass der Standard-Hintergrund tiefschwarz ist */
+      /* 2. Schriftart beibehalten und für extremen Kontrast optimieren */
+      *, p, h1, h2, h3, h4, h5, h6, span, a, li, b, strong, em, input, textarea, button {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+        -webkit-font-smoothing: antialiased !important;
+      }
+      
+      /* 3. Zentriertes eBook-Lese-Layout */
       body {
-        background-color: #000000 !important;
-        color: #ffffff !important;
         max-width: 680px !important;
         margin: 0 auto !important;
         padding: 20px !important;
         line-height: 1.6 !important;
-      }
-      
-      /* 3. Alle Texte, Rahmen und Linien auf reines Weiß zwingen */
-      *, p, h1, h2, h3, h4, h5, h6, span, a, li, b, strong, em, input, textarea, button {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
-        text-shadow: none !important;
-        box-shadow: none !important;
-      }
-      
-      /* 4. Strukturierte Rahmen für Boxen behalten */
-      article, section, [role="main"], .g, .card, .post {
-        border: 2px solid #ffffff !important;
-        border-radius: 12px !important;
-        padding: 16px !important;
-        margin-bottom: 16px !important;
-      }
-      
-      /* 5. Bilder und Videos erlauben (sie werden durch den Filter zu 2-Farben-Kunstwerken) */
-      img, video, canvas {
-        display: block !important;
-        max-width: 100% !important;
-        height: auto !important;
-        border: 2px solid #ffffff !important;
-        border-radius: 12px !important;
-        margin: 12px 0 !important;
-      }
-
-      /* Störende Werbe-Iframes komplett ausblenden */
-      iframe {
-        display: none !important;
       }
     `
   };
