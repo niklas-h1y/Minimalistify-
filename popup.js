@@ -24,39 +24,56 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     `,
     hard: `
-      /* 1. Globaler Farbentzug ohne Box-Explosion */
-      html, body {
+      /* 1. Globaler Farbentzug: Garantiert weißer Hintergrund für ALLES */
+      html, body, div, form, header, nav, main {
         background: #ffffff !important;
         color: #000000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        background-image: none !important;
       }
       
-      /* Nur Text- und Struktur-Elemente filtern, nicht JEDES Element */
-      p, h1, h2, h3, h4, h5, h6, span, a, li, button, input {
+      /* 2. Text-Elemente rigoros lesbar machen */
+      p, h1, h2, h3, h4, h5, h6, span, a, li, b, strong, em, input, textarea {
         color: #000000 !important;
         font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
         background: transparent !important;
       }
       
-      /* 2. Strukturierte Hauptboxen sauber abrunden, ohne Verschachtelungs-Schleife */
-      article, section, main, .post, .card, li {
+      /* Links sauber unterstreichen, da Farben fehlen */
+      a {
+        text-decoration: underline !important;
+      }
+      
+      /* 3. Strukturierte Trennlinien und abgerundete Boxen für Feeds & Suchergebnisse */
+      article, section, [role="main"], .g, .card, .post {
         background: #ffffff !important;
-        border: 1px solid #000000 !important;
-        border-radius: 10px !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 12px !important;
         padding: 16px !important;
         margin-bottom: 16px !important;
       }
       
-      /* 3. Medien komplett verstecken */
+      /* Knöpfe und Eingabefelder sauber umranden */
+      button, input, select {
+        border: 1px solid #000000 !important;
+        border-radius: 8px !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 6px 12px !important;
+      }
+      
+      /* 4. Medien und störende Layout-Kreise komplett verstecken */
       img, video, iframe, svg, canvas, audio {
         display: none !important;
       }
       
-      /* 4. Zentriertes, sauberes eBook-Layout */
+      /* 5. Zentriertes, sauberes Lese-Layout */
       body {
-        max-width: 650px !important;
+        max-width: 680px !important;
         margin: 0 auto !important;
-        padding: 40px 20px !important;
-        line-height: 1.7 !important;
+        padding: 20px !important;
+        line-height: 1.6 !important;
       }
     `
   };
@@ -65,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab) return;
 
+    // Alten Style entfernen
     await chrome.scripting.executeScript({
       target: { tabId: tab.id },
       func: () => {
@@ -73,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Neuen Style injizieren
     if (modeName !== 'reset') {
       const cssToInject = modes[modeName];
       chrome.scripting.executeScript({
