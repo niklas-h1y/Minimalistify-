@@ -24,31 +24,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     `,
     hard: `
-      /* 1. Globaler Farbentzug: Garantiert weißer Hintergrund für ALLES */
+      /* 1. Globaler Farbentzug: Garantiert TIEFSCHWARZER Hintergrund für ALLES */
       html, body, div, form, header, nav, main {
-        background: #ffffff !important;
-        color: #000000 !important;
+        background: #121212 !important;
+        color: #ffffff !important;
         box-shadow: none !important;
         text-shadow: none !important;
         background-image: none !important;
       }
       
-      /* 2. Text-Elemente rigoros lesbar machen */
+      /* 2. Text-Elemente rigoros weiß und lesbar machen */
       p, h1, h2, h3, h4, h5, h6, span, a, li, b, strong, em, input, textarea {
-        color: #000000 !important;
+        color: #ffffff !important;
         font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
         background: transparent !important;
       }
       
-      /* Links sauber unterstreichen, da Farben fehlen */
+      /* Links sauber unterstreichen und leicht bläulich färben */
       a {
         text-decoration: underline !important;
+        color: #8ab4f8 !important;
       }
       
-      /* 3. Strukturierte Trennlinien und abgerundete Boxen für Feeds & Suchergebnisse */
+      /* 3. Strukturierte Trennlinien und dunkelgraue Boxen für Feeds & Suchergebnisse */
       article, section, [role="main"], .g, .card, .post {
-        background: #ffffff !important;
-        border: 1px solid #e0e0e0 !important;
+        background: #1e1e1e !important;
+        border: 1px solid #333333 !important;
         border-radius: 12px !important;
         padding: 16px !important;
         margin-bottom: 16px !important;
@@ -56,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
       
       /* Knöpfe und Eingabefelder sauber umranden */
       button, input, select {
-        border: 1px solid #000000 !important;
+        border: 1px solid #555555 !important;
         border-radius: 8px !important;
-        background: #ffffff !important;
-        color: #000000 !important;
+        background: #252525 !important;
+        color: #ffffff !important;
         padding: 6px 12px !important;
       }
       
