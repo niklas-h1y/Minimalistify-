@@ -1,4 +1,4 @@
-# 𝐌𝐢𝐧𝐢𝐦𝐚ល𝐢𝐬𝐭𝐢𝐟𝐲
+# 𝐌𝐢𝐧𝐢𝐦𝐚𝐥𝐢𝐬𝐭𝐢𝐟𝐲
 
 A radical, ultra-lightweight browser extension that strips away web clutter and transforms websites into a beautiful, high-contrast, two-color interface with a single click. Engineered for maximum reading focus, absolute visual clarity, and perfect compatibility with high-speed scrolling extensions.
 
