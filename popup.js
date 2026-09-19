@@ -24,57 +24,52 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     `,
     hard: `
-      /* 1. Radikaler, absolut lückenloser Tiefschwarz-Modus für ALLE Container */
-      *, html, body, div, form, header, nav, main, article, section, blockquote {
-        background-color: #121212 !important;
+      /* 1. Jedes Element verliert seine ursprüngliche Farbe und wird reines Schwarz-Weiß */
+      * {
+        background-color: #000000 !important;
         background-image: none !important;
+        color: #ffffff !important;
+        border-color: #ffffff !important;
         box-shadow: none !important;
         text-shadow: none !important;
-        border-color: #333333 !important;
-      }
-      
-      /* 2. Knallharter Text-Kontrast: Alles wird reinweiß */
-      p, h1, h2, h3, h4, h5, h6, span, a, li, b, strong, em, input, textarea, dt, dd {
-        color: #ffffff !important;
         font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
-        background-color: transparent !important;
       }
       
-      /* Links sauber kennzeichnen */
-      a {
-        text-decoration: underline !important;
-        color: #8ab4f8 !important;
-      }
-      
-      /* 3. Schicke, einheitliche Rahmen um die Google-Suchergebnisse & Hauptblöcke */
-      .g, .card, .post, [role="main"] {
-        border: 1px solid #333333 !important;
+      /* 2. Struktur-Boxen bekommen eine saubere weiße Outline */
+      article, section, [role="main"], .g, .card, .post {
+        border: 1px solid #ffffff !important;
         border-radius: 12px !important;
         padding: 16px !important;
         margin-bottom: 16px !important;
-        background-color: #121212 !important;
       }
       
-      /* Knöpfe und Eingabefelder anpassen */
-      button, input, select, [role="button"] {
-        border: 1px solid #555555 !important;
+      /* Formular-Elemente und Buttons umranden */
+      button, input, select, textarea, [role="button"] {
+        border: 1px solid #ffffff !important;
         border-radius: 8px !important;
-        background-color: #252525 !important;
+        background-color: #000000 !important;
         color: #ffffff !important;
         padding: 6px 12px !important;
       }
       
-      /* 4. Medien, störende Icons und Trenn-Kreise komplett eliminieren */
+      /* Links weiß halten, aber deutlich unterstreichen */
+      a {
+        color: #ffffff !important;
+        text-decoration: underline !important;
+      }
+      
+      /* 3. Medien, Icons und komplexe Grafikpfade komplett unsichtbar machen */
       img, video, iframe, svg, canvas, audio, g, path {
         display: none !important;
       }
       
-      /* 5. Perfekt zentriertes eBook-Lese-Layout */
+      /* 4. Zentriertes eBook-Lese-Layout */
       body {
         max-width: 680px !important;
         margin: 0 auto !important;
         padding: 20px !important;
         line-height: 1.6 !important;
+        background-color: #000000 !important;
       }
     `
   };
