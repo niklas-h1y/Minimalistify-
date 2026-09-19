@@ -1,4 +1,4 @@
-# Style to Minimalist Converter
+# 𝐌𝐢𝐧𝐢𝐦𝐚𝐥𝐢𝐬𝐭𝐢𝐟𝐲
 
 A lightweight Chrome & mobile extension that transforms cluttered, distracting, and heavy websites into a clean, beautiful, and distraction-free interface with a single click. Perfect for increasing focus, reading articles peacefully, and saving mobile data.
 
