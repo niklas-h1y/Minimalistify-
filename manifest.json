@@ -3,7 +3,7 @@
   "name": "𝐌𝐢𝐧𝐢𝐦𝐚𝐥𝐢𝐬𝐭𝐢𝐟𝐲",
   "version": "1.0.0",
   "description": "Convert any cluttered website into a clean, distraction-free minimalist interface with a single click.",
-  "permissions": ["scripting", "activeTab", "storage"],
+  "permissions": ["scripting", "activeTab"],
   "action": {
     "default_popup": "popup.html"
   }
