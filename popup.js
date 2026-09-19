@@ -24,52 +24,50 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     `,
     hard: `
-      /* 1. Jedes Element verliert seine ursprüngliche Farbe und wird reines Schwarz-Weiß */
-      * {
+      /* 1. Mathematischer 2-Farben-Filter für die gesamte Webseite */
+      html {
+        filter: grayscale(100%) contrast(1000%) !important;
         background-color: #000000 !important;
-        background-image: none !important;
-        color: #ffffff !important;
-        border-color: #ffffff !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
       }
       
-      /* 2. Struktur-Boxen bekommen eine saubere weiße Outline */
+      /* 2. Sicherstellen, dass der Standard-Hintergrund tiefschwarz ist */
+      body {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        padding: 20px !important;
+        line-height: 1.6 !important;
+      }
+      
+      /* 3. Alle Texte, Rahmen und Linien auf reines Weiß zwingen */
+      *, p, h1, h2, h3, h4, h5, h6, span, a, li, b, strong, em, input, textarea, button {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+      }
+      
+      /* 4. Strukturierte Rahmen für Boxen behalten */
       article, section, [role="main"], .g, .card, .post {
-        border: 1px solid #ffffff !important;
+        border: 2px solid #ffffff !important;
         border-radius: 12px !important;
         padding: 16px !important;
         margin-bottom: 16px !important;
       }
       
-      /* Formular-Elemente und Buttons umranden */
-      button, input, select, textarea, [role="button"] {
-        border: 1px solid #ffffff !important;
-        border-radius: 8px !important;
-        background-color: #000000 !important;
-        color: #ffffff !important;
-        padding: 6px 12px !important;
+      /* 5. Bilder und Videos erlauben (sie werden durch den Filter zu 2-Farben-Kunstwerken) */
+      img, video, canvas {
+        display: block !important;
+        max-width: 100% !important;
+        height: auto !important;
+        border: 2px solid #ffffff !important;
+        border-radius: 12px !important;
+        margin: 12px 0 !important;
       }
-      
-      /* Links weiß halten, aber deutlich unterstreichen */
-      a {
-        color: #ffffff !important;
-        text-decoration: underline !important;
-      }
-      
-      /* 3. Medien, Icons und komplexe Grafikpfade komplett unsichtbar machen */
-      img, video, iframe, svg, canvas, audio, g, path {
+
+      /* Störende Werbe-Iframes komplett ausblenden */
+      iframe {
         display: none !important;
-      }
-      
-      /* 4. Zentriertes eBook-Lese-Layout */
-      body {
-        max-width: 680px !important;
-        margin: 0 auto !important;
-        padding: 20px !important;
-        line-height: 1.6 !important;
-        background-color: #000000 !important;
       }
     `
   };
