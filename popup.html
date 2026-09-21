@@ -4,43 +4,94 @@
   <meta charset="UTF-8">
   <style>
     body {
-      width: 220px;
+      width: 240px;
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      padding: 14px;
+      padding: 16px;
       margin: 0;
-      background: #121212;
-      color: #ffffff;
-      text-align: center;
+      background: #0a0a0a; /* Tiefes, sauberes Schwarz */
+      color: #eaeaea;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #1f1f1f; /* Dezente Trennlinie */
     }
     h3 { 
-      margin: 0 0 12px 0; 
-      font-size: 15px; 
-      letter-spacing: 1.5px;
-      font-weight: 600;
+      margin: 0; 
+      font-size: 16px; 
+      letter-spacing: 0.5px;
+    }
+    /* Ein minimalistischer Indikator (Punkt) passend zum Namen */
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px; /* Gleichmäßiger Abstand */
     }
     button {
       width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-      border: none;
-      background: #252525;
-      color: #fff;
-      border-radius: 10px;
+      padding: 11px 14px;
+      border: 1px solid #262626; /* Feiner Rahmen statt flächigem Block */
+      background: #121212;
+      color: #a3a3a3;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      transition: background 0.2s;
+      text-align: left; /* Linksbündig wirkt professioneller und moderner */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
     }
-    button:hover { background: #353535; }
-    .reset { background: #b22222; }
-    .reset:hover { background: #dc143c; }
+    button:hover { 
+      background: #1a1a1a;
+      border-color: #404040;
+      color: #ffffff;
+    }
+    /* Der Reset-Button verzichtet auf Rot und nutzt stattdessen edles Weiß bei Hover */
+    .reset {
+      margin-top: 4px;
+      border-color: #262626;
+      background: transparent;
+      color: #737373;
+    }
+    .reset:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #000000;
+    }
+    .shortcut {
+      font-size: 10px;
+      color: #525252;
+    }
+    button:hover .shortcut {
+      color: #a3a3a3;
+    }
+    .reset:hover .shortcut {
+      color: #525252;
+    }
   </style>
 </head>
 <body>
-  <h3>𝐌𝐢𝐧𝐢𝐦𝐚𝐥𝐢𝐬𝐭𝐢𝐟𝐲</h3>
-  <button id="btn-mild">Mild (Clean & Round)</button>
-  <button id="btn-hard">Hardcore (B&W Mono)</button>
-  <button id="btn-reset" class="reset">Reset Style</button>
+  <div class="header">
+    <h3>𝐌𝐢𝐧𝐢𝐦𝐚𝐥𝐢𝐬𝐭𝐢𝐟𝐲</h3>
+    <div class="dot"></div>
+  </div>
+  
+  <div class="btn-group">
+    <button id="btn-mild">Mild <span class="shortcut">Round</span></button>
+    <button id="btn-hard">Hardcore <span class="shortcut">B&W</span></button>
+    <button id="btn-reset" class="reset">Reset Layout</button>
+  </div>
 
   <script src="popup.js"></script>
 </body>
